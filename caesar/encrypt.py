@@ -4,17 +4,16 @@ enc_msg = []
 decrypt = []
 mesaj = []
 
-def caesar(harf,key):
-  enc = harf + key
-  encmsg = enc_msg.append(ascii_letters[enc].lower())
-  
+def caesar(key,kelime):
+  for harf in kelime:
+    harfler.append(harf)
 
-for harf in kelime:
-  harfler.append(harf)
+  for i in harfler:
+    k = int(ascii_letters.index(i))
+    enc = k + key
+    enc_msg.append(ascii_letters[enc].lower())
   
-for i in harfler:
-  k = int(ascii_letters.index(i))
-  caesar(k,key)
-
-print(f"Original text is: {kelime}")
-print(f"Encrypted text is: {"".join(enc_msg)}") 
+  encrypted_text = "".join(enc_msg)
+  print(f"Plain Text:{kelime}")
+  print(f"Encrypted Text:{encrypted_text}, Key:{key}")
+  return encrypted_text
